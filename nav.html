@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Example</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJrL2wN9ATyY25PAMOXhCk7XfUn9hpQjPFE1NX1WhE5pVfp6+zjlj5sd62Oo" crossorigin="anonymous">
+    <style>
+        .content {
+            margin-top: 20px;
+        }
+        *{
+            margin: 0;
+        padding: 0;
+        }
+       nav ul{
+        background-color: gray;
+      
+       }
+        .nav-item {
+            cursor: pointer;
+          
+            
+        }
+        li{
+            display: inline-block;
+            color: black;
+            font-size: 30px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="home">Home</li>
+                <li class="nav-item" id="video">Video</li>
+                <li class="nav-item" id="audio">Audio</li>
+                <li class="nav-item" id="entertainment">Entertainment</li>
+                <li class="nav-item" id="images">Images</li>
+                <li class="nav-item" id="news">News</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Content Area -->
+<div class="container content">
+    <div id="content-display">
+        <h3>Select a category from the menu</h3>
+    </div>
+</div>
+
+<!-- Link to Bootstrap JS and JS files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0mtM7jw7hXp7EYI4t0YfWrYjXkM2q28B45gVm6F5K4k9kkxk" crossorigin="anonymous"></script>
+
+<!-- Custom JS for dynamic content -->
+<script>
+    // Data for each category
+    const data = {
+        home: "Welcome to the Home page!",
+        video: "Here are some interesting videos.",
+        audio: "Enjoy the latest audio tracks.",
+        entertainment: "Check out the latest entertainment news.",
+        images: "Browse through beautiful images.",
+        news: "Latest updates from around the world."
+    };
+
+    // Function to change content based on clicked navbar item
+    function displayContent(category) {
+        const contentDisplay = document.getElementById("content-display");
+        contentDisplay.innerHTML = `<h3>${data[category]}</h3>`;
+    }
+
+    // Event listeners for navbar items
+    document.getElementById("home").addEventListener("click", function() {
+        displayContent("home");
+    });
+
+    document.getElementById("video").addEventListener("click", function() {
+        displayContent("video");
+    });
+
+    document.getElementById("audio").addEventListener("click", function() {
+        displayContent("audio");
+    });
+
+    document.getElementById("entertainment").addEventListener("click", function() {
+        displayContent("entertainment");
+    });
+
+    document.getElementById("images").addEventListener("click", function() {
+        displayContent("images");
+    });
+
+    document.getElementById("news").addEventListener("click", function() {
+        displayContent("news");
+    });
+</script>
+
+</body>
+</html>
